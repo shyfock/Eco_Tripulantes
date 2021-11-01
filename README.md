@@ -8,7 +8,7 @@
   <li>Teclear</li>
   <p>$git clone https://github.com/shyfock/Eco_Tripulantes.git</p>
   
-<li>Una vez clonado el repositorio abrir la carpeta desde VSCode y acceder a la carpeta server desde la terminal cmd o powershell:</li>
+<li>Una vez clonado el repositorio abrir la carpeta desde VSCode y acceder a la carpeta server desde la rama <strong>server</strong> por la terminal cmd o powershell:</li>
   <ul>
     <li>Teclear</li>
     <p>$npm install</p>
