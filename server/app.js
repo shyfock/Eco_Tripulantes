@@ -3,7 +3,9 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-var database = require('./config/database')
+var database = require('./config/database');
+
+var usersRouter = require('./routes/usuario.router');
 
 var app = express();
 
@@ -20,6 +22,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 database.mongoConnect();
 
 //Router
+app.use('/users', usersRouter);
 
 
 // Mensaje a página del navegador
