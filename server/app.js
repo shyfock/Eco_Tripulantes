@@ -4,8 +4,10 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var database = require('./config/database');
+var auth = require('./auth/main.auth');
 
 var usersRouter = require('./routes/usuario.router');
+var publicationsRouter = require('./routes/publication.router');
 
 var app = express();
 
@@ -23,6 +25,10 @@ database.mongoConnect();
 
 //Router
 app.use('/users', usersRouter);
+
+app.use(auth);
+
+app.use('/publications', publicationsRouter);
 
 
 // Mensaje a página del navegador
