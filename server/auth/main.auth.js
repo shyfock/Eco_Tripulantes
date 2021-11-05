@@ -9,9 +9,9 @@ const auth = (req, res, next) => {
         req.username = decoded;
         next();
     } catch (error) {
-        console.log(req.headers)
+        //console.log(req.headers)
         res.status(401);
-        res.json({code: 4, msg: "no tiene permisos para acceder", msg2: `${JSON.stringify(req.headers)}`});
+        res.json({code: 4, msg: "no tiene permisos para acceder"/* , msg2: `${JSON.stringify(req.headers)}` */});
     }
 }
 

@@ -1,4 +1,5 @@
 const Publication = require("../models/publication.model")
+
 let response = {
     msg: "",
     exito: false,
@@ -6,8 +7,8 @@ let response = {
 
 exports.create = function(req, res) {
     let publication = new Publication({
-        material: req.body.material,
-        prodImage: null,
+        material: req.body.materialType,
+        //prodImage: {},
         quantity: req.body.quantity,
         frecuency: req.body.frecuency,
         address: req.body.address,
@@ -15,8 +16,6 @@ exports.create = function(req, res) {
         department: req.body.department,
         description: req.body.description,
     })
-    publication.prodImage.data = req.files;
-    publication.prodImage.contentType = 'image/png';
     publication.save(function(err){
         if(err) {
             console.log = false;

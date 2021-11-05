@@ -10,7 +10,7 @@ exports.mongoConnect = () => {
     mongoose.Promise = global.Promise;
     const dbConnection = mongoose.connection;
     dbConnection.on("error", console.error.bind(console, "MongoDB connection error"))
-    dbConnection.once("open", () => {
-        console.log("DB - OK! in port: " + `${host}:${port}`);
+    dbConnection.once("connected", () => {
+        console.log("DB - OK! on port: http://" + `${host}:${port}`);
     })
 }

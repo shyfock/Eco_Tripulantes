@@ -6,13 +6,14 @@ var logger = require('morgan');
 var database = require('./config/database');
 var auth = require('./auth/main.auth');
 
-var usersRouter = require('./routes/usuario.router');
 var publicationsRouter = require('./routes/publication.router');
+var usersRouter = require('./routes/usuario.router');
+
 
 var app = express();
 
 // view engine setup
-app.set('views', path.join(__dirname, 'views'));
+// app.set('views', path.join(__dirname, 'views'));
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -32,9 +33,9 @@ app.use('/publications', publicationsRouter);
 
 
 // Mensaje a página del navegador
-app.use((req, res) => {
-  res.send({code: req.headers.connection, msg: "Estamos en construcción, code: " + `${res.statusCode}`})
-})
+// app.use((req, res) => {
+//   res.send({code: req.headers.connection, msg: "Estamos en construcción, code: " + `${res.statusCode}`})
+// })
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
