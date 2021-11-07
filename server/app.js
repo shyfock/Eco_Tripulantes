@@ -3,8 +3,10 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var cors = require('cors');
 var database = require('./config/database');
 var auth = require('./auth/main.auth');
+var testSERVERRouter = require('./routes/testSERVER');
 
 var publicationsRouter = require('./routes/publication.router');
 var usersRouter = require('./routes/usuario.router');
@@ -15,6 +17,7 @@ var app = express();
 // view engine setup
 // app.set('views', path.join(__dirname, 'views'));
 
+app.use(cors());
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -25,7 +28,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 database.mongoConnect();
 
 //Router
+
 app.use('/users', usersRouter);
+
+app.use("/testSERVER", testSERVERRouter);
 
 app.use(auth);
 
