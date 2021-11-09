@@ -1,11 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+
 import App from './App';
 <<<<<<< HEAD
 import Cards from './Cards';
+<<<<<<< HEAD
 =======
 >>>>>>> 7d55bc5 (Adjunta .gitignore)
+=======
+
+>>>>>>> 0f704df3aedac730e443c995b1d176a1ffbdbf51
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(

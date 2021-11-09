@@ -1,4 +1,5 @@
-<<<<<<< HEAD
+
+
 # Logs
 logs
 *.log
@@ -118,9 +119,13 @@ dist
 .yarn/install-state.gz
 .pnp.*
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> 2c7833c (Rebase client en server)
+=======
+
+>>>>>>> 0f704df3aedac730e443c995b1d176a1ffbdbf51
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
@@ -145,6 +150,9 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> a2f6b37 (Creamos la carpeta client (create-react-app))
 >>>>>>> 2c7833c (Rebase client en server)
+=======
+>>>>>>> 0f704df3aedac730e443c995b1d176a1ffbdbf51
