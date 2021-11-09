@@ -1,0 +1,60 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Oxygen, sans-serif;
+  margin: 2rem;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 16rem));
+  gap: 2rem;
+  justify-content: center;
+}
+
+.card {
+  overflow: hidden;
+  box-shadow: 0 2px 20px #e1e5ee;
+  border-radius: 0.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: transform 200ms ease-in;
+}
+.card__image {
+  height: 12rem;
+  width: 100%;
+  object-fit: cover;
+}
+.card__title {
+  padding: 1rem;
+}
+.card__description {
+  padding: 0 1rem;
+}
+.card__btn {
+  padding: 1rem;
+  font-family: inherit;
+  font-weight: bold;
+  font-size: 1rem;
+  margin: 1rem;
+  border: 2px solid #4f9d9f;
+  background: transparent;
+  color: #4f9d9f;
+  border-radius: 0.2rem;
+  transition: background 200ms ease-in, color 200ms ease-in;
+}
+.card:hover {
+  transform: scale(1.02);
+}
+.card:hover .card__btn {
+  background: #4f9d9f;
+  color: white;
+}
