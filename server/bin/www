@@ -12,7 +12,11 @@ var http = require('http');
  * Get port from environment and store in Express.
  */
 
+<<<<<<< HEAD
 var port = normalizePort(process.env.PORT || '9000');
+=======
+var port = normalizePort(process.env.PORT || '3000');
+>>>>>>> 97596be (Rebase client sobre main)
 app.set('port', port);
 
 /**
