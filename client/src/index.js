@@ -2,13 +2,19 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+<<<<<<< HEAD
 import Cards from './Cards';
+=======
+>>>>>>> 7d55bc5 (Adjunta .gitignore)
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
     <App />
+<<<<<<< HEAD
     <Cards/>
+=======
+>>>>>>> 7d55bc5 (Adjunta .gitignore)
   </React.StrictMode>,
   document.getElementById('root')
 );
