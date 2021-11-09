@@ -3,23 +3,17 @@ import ReactDOM from 'react-dom';
 import './index.css';
 
 import App from './App';
-<<<<<<< HEAD
-import Cards from './Cards';
-<<<<<<< HEAD
-=======
->>>>>>> 7d55bc5 (Adjunta .gitignore)
-=======
 
->>>>>>> 0f704df3aedac730e443c995b1d176a1ffbdbf51
+import Cards from './Cards';
+
+
+
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
     <App />
-<<<<<<< HEAD
     <Cards/>
-=======
->>>>>>> 7d55bc5 (Adjunta .gitignore)
   </React.StrictMode>,
   document.getElementById('root')
 );
