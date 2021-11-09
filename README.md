@@ -13,6 +13,10 @@
     <li>Teclear</li>
     <p>$npm install</p>
     <li>Teclear</li>
+    <p>$npm install cors</p>
+     <li>Teclear</li>
+    <p>$npm install jsonwebtoken</p>
+    <li>Teclear</li>
     <p>$npm start</p>
   </ul>
   <li>Si todo está correcto debe ver el siguiente mensaje en consola:</li>
