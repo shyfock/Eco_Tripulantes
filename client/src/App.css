@@ -1,3 +1,55 @@
+
+.columna-login {
+    margin-left: 10%;
+}
+.columna-form {
+    margin-right: 10%;
+}
+.form-login{
+    text-align: center;
+    background-color: rgb(187 208 240 / 50%);
+    border-radius: 10px ;
+    box-shadow: 0px 1px 2px 0px;
+    margin: 0px 74px 0px 74px;
+}
+.formulario {
+    display: flex;
+    flex-direction: column;
+    margin: inherit;
+    margin-left: 30px;
+    margin-top: 20px;
+}
+.inputs {
+    margin-bottom: 10px;
+}
+.labels {
+    float: left;
+    margin-bottom: 8px !important;
+}
+.link {
+    text-decoration: initial;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.nav-style{
+    box-shadow:  0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    z-index: 5px;
+}
+.row-logo{
+    width: 40%;
+    margin: auto;
+}
+
+.row1 {
+    margin: 30px 20px 30px 0px;
+}
+
+
+
+
+
+
+
 .sign-box {
     width: 300px;
     height: 400px;

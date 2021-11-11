@@ -7,7 +7,7 @@ import {  NavItem } from 'reactstrap';
 const Navegation = () => {
     return (
         <div>
-        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav className="navbar nav-style navbar-expand-lg navbar-dark bg-dark">
             <div className="container">
                 <a className="navbar-brand" href="#">
                 <img src={logo} alt="" width="60" height="54"/>Ecotripulantes
