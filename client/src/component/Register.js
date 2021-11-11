@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 import Navigation from '../layouts/Navegation';
 import "../App.css";
 
@@ -30,6 +31,9 @@ const Register = () => {
             <button  className='s-btn btn btn-primary'>
                 Registrarme
             </button>
+            <div>
+                <Link to="/login">Iniciar sesión</Link>
+            </div>
 
 
         </form>
