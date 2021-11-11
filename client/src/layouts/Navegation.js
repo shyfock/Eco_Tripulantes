@@ -1,7 +1,7 @@
 import React  from "react";
 import logo from '../assets/logo.png';
 import { Link } from 'react-router-dom';
-import {  NavItem } from 'reactstrap';
+import { NavItem } from 'react-bootstrap';
 
 
 const Navegation = () => {
@@ -9,9 +9,9 @@ const Navegation = () => {
         <div>
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
             <div className="container">
-                <a className="navbar-brand" href="#">
+                <Link to="/">
                 <img src={logo} alt="" width="60" height="54"/>Ecotripulantes
-                </a>
+                </Link>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
                 </button>

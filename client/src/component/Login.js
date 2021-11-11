@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom'
 import Navigation from '../layouts/Navegation';
 import "../App.css";
 
@@ -23,7 +24,9 @@ const Login = () => {
             <button className='s-btn btn btn-primary'>
                 Iniciar sesión
             </button>
-
+            <div>
+                <Link to="/register">Crear cuenta</Link>
+            </div>
 
         </form>
 
