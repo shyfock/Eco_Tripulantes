@@ -1,54 +1,98 @@
 import React from "react";
 import { Link } from 'react-router-dom';
 import Navigation from '../layouts/Navegation';
+import { Button, Container, Form, Row, Col } from 'react-bootstrap';
+import logo from '../assets/logo.png';
+import { Link } from 'react-router-dom';
 import "../App.css";
 
-const Register = () => {
-    const RegisterForm = () => (
-        <form className="sign-box">
-            <div className="form-group">
-                <label className='text-muted'>Nombre</label>
-                <input
-                type='text'
-                className='form-control'
-                />
-            </div>
-            <div className="form-group">
-                <label className='text-muted'>Correo</label>
-                <input
-                type='email'
-                className='form-control'
-                />
-            </div>
-            <div className="form-group">
-                <label className='text-muted'>Contraseña</label>
-                <input
-                type='password'
-                className='form-control'
-                
-                />
-            </div>
-            <button  className='s-btn btn btn-primary'>
-                Registrarme
-            </button>
-            <div>
-                <Link to="/login">Iniciar sesión</Link>
-            </div>
+export default class register extends  React.Component {
+
+    constructor(props) {
+        super(props);
+        this.state ={
+            usuario: '',
+            email: '',
+            pass: '',
+        }
+    }
+
+    render () {
+        return (
+            <>
+                <Navigation/>
+                <Container id="login-container" style={{ marginTop: 100}}>
+                <Row className="form-login">
+                    <Col className="columna-login">
+                        <Row className="row1">
+                        <img src={logo} alt="" className="row-logo" ></img>
+                            <h1 style={{fontSize: 30}}>EcoTripulantes</h1>
+                            <p>Una apuesta para ayudar al medio ambiente, mediante una comunidad</p>
+                        </Row>
+                    </Col>
+                    <Col className="columna-form">
+                    <Form className='formulario'>
+                        <Form.Group >
+                            <Form.Label className='labels'>Usuario</Form.Label>
+                            <Form.Control
+                                onChange={(e) =>
+                                    this.setState({usuario: e.target.value})
+                                }
+                                type="email"
+                                placeholder="Usuario"
+                                className='inputs'
+                            />
+                            {
+                                this.state.usuario
+                            }
+                            <Form.Label className='labels'>Correo electrónico</Form.Label>
+                            <Form.Control 
+                            onChange={(e) =>
+                                this.setState({email: e.target.value})
+                            }
+                            type="email" 
+                            placeholder="correo@ejemplo.com"
+                            className='inputs' 
+                            />
+                            {
+                                this.state.email
+                            }
+                            <Form.Label className='labels'>
+                                Contraseña
+                            </Form.Label>
+                            <Form.Control 
+                                onChange={(e) =>
+                                    this.setState({password: e.target.value})
+                                }
+                                type="password"
+                                placeholder="Contraseña"
+                                className='inputs'
+                            />{
+                                this.state.password
+                            }
+                        </Form.Group>
+                        <Button
+                            variant="primary"
+                            type="submit"
+                            style={{
+                                marginTop: 20,
+                                width: '100%'
+                            }}
+                            onClick={() => {
+
+                            }}
+                        >
+                            Registrarme
+                        </Button>
+                        <Link className="link" to="/login">Iniciar sesión</Link>
+                    </Form>
+                    </Col>
+                </Row>
+            </Container>
+            </>
+        );    
+
+    }
 
 
-        </form>
-
-    );
-
-    return (
-        <>
-        <Navigation/>
-        <div className="mt-5">
-            <h4 className="text-center mb-5">Registrarme</h4>
-                {RegisterForm()}
-        </div>
-        </>
-    );
 }
-
-export default Register;
