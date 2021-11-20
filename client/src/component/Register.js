@@ -3,20 +3,34 @@ import { Link } from 'react-router-dom';
 import Navigation from '../layouts/Navegation';
 import { Button, Container, Form, Row, Col } from 'react-bootstrap';
 import logo from '../assets/logo.png';
-import { Link } from 'react-router-dom';
 import "../App.css";
+import { APP_HOST as host } from './app.json'
+
+const axios = require('axios').default;
 
 export default class register extends  React.Component {
 
     constructor(props) {
         super(props);
         this.state ={
-            usuario: '',
+            username: '',
             email: '',
-            pass: '',
+            password: '',
         }
     }
-
+    setRegister() {
+        axios.post(`${host}/users/register`, {
+            username: this.state.username,
+            email: this.state.email,
+            password: this.state.password
+        })
+        .then((res) => {
+            console.log(res)
+        })
+        .catch((err) => {
+            console.log(err)
+        })
+    }
     render () {
         return (
             <>
@@ -36,15 +50,15 @@ export default class register extends  React.Component {
                             <Form.Label className='labels'>Usuario</Form.Label>
                             <Form.Control
                                 onChange={(e) =>
-                                    this.setState({usuario: e.target.value})
+                                    this.setState({username: e.target.value})
                                 }
-                                type="email"
+                                type="text"
                                 placeholder="Usuario"
                                 className='inputs'
                             />
-                            {
-                                this.state.usuario
-                            }
+                            {/* {
+                                this.state.username
+                            } */}
                             <Form.Label className='labels'>Correo electrónico</Form.Label>
                             <Form.Control 
                             onChange={(e) =>
@@ -54,9 +68,9 @@ export default class register extends  React.Component {
                             placeholder="correo@ejemplo.com"
                             className='inputs' 
                             />
-                            {
+                            {/* {
                                 this.state.email
-                            }
+                            } */}
                             <Form.Label className='labels'>
                                 Contraseña
                             </Form.Label>
@@ -67,19 +81,20 @@ export default class register extends  React.Component {
                                 type="password"
                                 placeholder="Contraseña"
                                 className='inputs'
-                            />{
+                            />
+                            {/* {
                                 this.state.password
-                            }
+                            } */}
                         </Form.Group>
                         <Button
                             variant="primary"
-                            type="submit"
+                            //type="submit"
                             style={{
                                 marginTop: 20,
                                 width: '100%'
                             }}
                             onClick={() => {
-
+                                this.setRegister();
                             }}
                         >
                             Registrarme

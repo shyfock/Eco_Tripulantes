@@ -30,7 +30,7 @@ class App extends Component {
             paddingBottom: "1rem"
           }}
         >
-          <Link to="/home">Home</Link> |{" "}
+          {/* <Link to="/home">Home</Link> |{" "} */}
           <Link to="/chat">Chat</Link> |{" "}
           <Link to="/publications">Anuncios</Link> |{" "}
           <Link to="/login">Login</Link>
