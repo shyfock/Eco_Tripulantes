@@ -1,19 +1,21 @@
 import React from "react";
 import { Link } from 'react-router-dom'
-import Navigation from '../layouts/Navegation';
 import { Button, Container, Form, Row, Col } from 'react-bootstrap';
 import logo from '../assets/logo.png';
 import "../App.css";
-import { APP_HOST as host } from './app.json'
+import { APP_HOST as host } from '../app.json'
 import { isNull } from 'util'
 import { calculateSessionExpiration } from './helper'
 import Cookies from 'universal-cookie'
+import axios from 'axios'
 
-const axios = require('axios').default;
+
 const cookies = new Cookies();
 
-export default class login extends  React.Component {
 
+
+export default class Login extends  React.Component {
+    
     constructor(props) {
         super(props);
         this.state ={
@@ -35,8 +37,10 @@ export default class login extends  React.Component {
                     path: '/',
                     expires: calculateSessionExpiration(),
                 });
+            
             }
             console.log(res)
+            
         })
         .catch((err) => {
             console.log(err)
@@ -45,9 +49,7 @@ export default class login extends  React.Component {
 
     render () {
         return (
-            <>
-                <Navigation/>
-                <Container id="login-container" style={{ marginTop: 100}}>
+            <Container id="login-container" style={{ marginTop: 100}}>
                 <Row className="form-login">
                     <Col className="columna-login">
                         <Row className="row1">
@@ -104,10 +106,6 @@ export default class login extends  React.Component {
                     </Col>
                 </Row>
             </Container>
-            </>
         );    
-
     }
-
-
 }

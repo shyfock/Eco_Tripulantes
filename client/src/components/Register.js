@@ -1,14 +1,13 @@
 import React from "react";
 import { Link } from 'react-router-dom';
-import Navigation from '../layouts/Navegation';
 import { Button, Container, Form, Row, Col } from 'react-bootstrap';
 import logo from '../assets/logo.png';
 import "../App.css";
-import { APP_HOST as host } from './app.json'
+import { APP_HOST as host } from '../app.json'
 
 const axios = require('axios').default;
 
-export default class register extends  React.Component {
+export default class Register extends  React.Component {
 
     constructor(props) {
         super(props);
@@ -33,9 +32,7 @@ export default class register extends  React.Component {
     }
     render () {
         return (
-            <>
-                <Navigation/>
-                <Container id="login-container" style={{ marginTop: 100}}>
+            <Container id="login-container" style={{ marginTop: 100}}>
                 <Row className="form-login">
                     <Col className="columna-login">
                         <Row className="row1">
@@ -104,7 +101,6 @@ export default class register extends  React.Component {
                     </Col>
                 </Row>
             </Container>
-            </>
         );    
 
     }
