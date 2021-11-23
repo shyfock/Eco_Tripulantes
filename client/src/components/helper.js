@@ -10,5 +10,5 @@ export function calculateSessionExpiration() {
 }
 
 export function getSession() {
-    return isUndefined(cookies.get('_s') ? false : cookies.get('_s'));
+    return isUndefined(cookies.get('_s')) ? false : cookies.get('_s');
 }

@@ -25,6 +25,14 @@ function Navegation() {
                                 </Link>
                             </NavItem>
                             <NavItem className="nav-link">
+                                <Link className='nav-link' to='/profile'> Perfil
+                                </Link>
+                            </NavItem>
+                            <NavItem className="nav-link">
+                                <Link className='nav-link' to='/information'> Información
+                                </Link>
+                            </NavItem>
+                            <NavItem className="nav-link">
                                 <Link className='nav-link' to='/publications'> Anuncios
                                 </Link>
                             </NavItem>

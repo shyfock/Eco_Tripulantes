@@ -1,43 +1,25 @@
-import React from 'react';
-import { Redirect, Route} from 'react-router';
+import React, { useState, useRef, useLayoutEffect } from 'react';
+import { Navigate, Outlet } from 'react-router';
 import { getSession } from '../helper';
 
 const checkAuth = () => {
-    return getSession() ? false : true;
+    return !getSession() ? false : true;
 }
 
-class PrivateRoute extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            auth: false,
+export default function PrivateRoute () {
+    const [auth, setAuth] = useState(checkAuth() ? true : false)
+    const previousAuth = useRef(false)
+    useLayoutEffect(()=>(
+        () => {
+            previousAuth.current = checkAuth() && !auth;
+            setAuth(previousAuth.current);
         }
-    }
-    componentWillMount() {
-        this.setState({
-            auth: checkAuth() && !this.state.auth
-        })
-    }
-    render() { 
-        const { component: Component, ...rest } = this.props;
-        return (
-            <Route
-                {...rest}
-                render = {(props) => (
-                    this.state.auth ? (
-                        <Component {...props} />
-                    ) : (
-                        <Redirect
-                            to={{
-                                pathname:'/login',
-                                state: {from: this.props.location}
-                            }}
-                        />
-                    )
-                )}
-            />
-        );
-    }
+    ),[auth])
+    
+    console.log({
+        auth: auth,
+        previousAuth: previousAuth.current,
+        checkAuth: checkAuth()
+    })
+    return auth ? <Outlet/> : <Navigate to="/login"/>
 }
-
-export default PrivateRoute;

@@ -37,7 +37,7 @@ export default class Login extends  React.Component {
                     path: '/',
                     expires: calculateSessionExpiration(),
                 });
-            
+            window.location.replace('/home')
             }
             console.log(res)
             
@@ -69,6 +69,7 @@ export default class Login extends  React.Component {
                                 type="text"
                                 placeholder="Usuario"
                                 className='inputs'
+                                autoComplete="username"
                             />
                             {/* {
                                 this.state.username
@@ -83,6 +84,7 @@ export default class Login extends  React.Component {
                                 type="password"
                                 placeholder="Contraseña"
                                 className='inputs'
+                                autoComplete="current-password"
                             />
                             {/* {
                                 this.state.password

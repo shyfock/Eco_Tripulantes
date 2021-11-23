@@ -52,6 +52,7 @@ export default class Register extends  React.Component {
                                 type="text"
                                 placeholder="Usuario"
                                 className='inputs'
+                                autoComplete="username"
                             />
                             {/* {
                                 this.state.username
@@ -63,7 +64,8 @@ export default class Register extends  React.Component {
                             }
                             type="email" 
                             placeholder="correo@ejemplo.com"
-                            className='inputs' 
+                            className='inputs'
+                            autoComplete="username" 
                             />
                             {/* {
                                 this.state.email
@@ -78,6 +80,7 @@ export default class Register extends  React.Component {
                                 type="password"
                                 placeholder="Contraseña"
                                 className='inputs'
+                                autoComplete="new-password"
                             />
                             {/* {
                                 this.state.password
