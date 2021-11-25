@@ -1,6 +1,6 @@
 import React from "react";
 import Home from "../components/Home";
-import Chat from '../components/chat';
+import Chat from '../components/Chat';
 import Publications from '../components/publications';
 import Publication from '../components/publication';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
