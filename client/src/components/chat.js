@@ -1,17 +1,24 @@
-import { Link } from 'react-router-dom'
+import React from "react";
 
-function Chat() {
+import '../assets/chat.css';
+import Navegation from "../layouts/Navegation";
+import ChatBody from "./chatBody/ChatBody";
+import Nav from "./nav/Nav";
+
+
+const Chat = () => {
     return (
-        <main
-            style={{ padding: "1rem 0" }}
-        >
-            <h2>Chat</h2>
-            <div>
-                <Link to='/home'>Home</Link>
-            </div>
+        <>
+        <Navegation/>
+        <div className="__main" >
+            <Nav/>
+            <ChatBody/>
+            
 
-        </main>
-    )
+        </div>
+        </>
+    );
+
 }
 
 export default Chat;
