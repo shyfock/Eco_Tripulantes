@@ -10,6 +10,7 @@ var testSERVERRouter = require('./routes/testSERVER');
 
 var publicationsRouter = require('./routes/publication.router');
 var usersRouter = require('./routes/usuario.router');
+var informationRouter = require('./routes/information.router');
 
 
 var app = express();
@@ -32,6 +33,8 @@ database.mongoConnect();
 app.use('/users', usersRouter);
 
 app.use("/testSERVER", testSERVERRouter);
+
+app.use("/information", informationRouter);
 
 app.use(auth);
 

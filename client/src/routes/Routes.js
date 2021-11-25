@@ -16,7 +16,7 @@ function AppRouter() {
     return (
         <Router>
             <Routes>
-                <Route exact path="/" element={<Navegation/>}>
+                <Route exact path="/" element={<Navbar/>}>
                     {/* <Route path="/home" index element={<Home/>}/> */}
                     <Route exact path="/register" element={<Register/>}/>
                     <Route exact path="/login" element={<Login/>}/>

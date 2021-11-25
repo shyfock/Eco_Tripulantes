@@ -8,6 +8,7 @@ import {
     NavBtnLink
 } from './NavbarElements';
 import * as Icons from "react-icons/ti";
+import { Outlet } from 'react-router';
 
 const Navbar = () => {
     return (
@@ -33,15 +34,21 @@ const Navbar = () => {
                     <NavLink to="/publications" activeStyle>
                         Anuncios
                     </NavLink>
-                    <NavBtnLink to="/login">
-                        Iniciar sesión<Icons.TiUser/></NavBtnLink>
-                    <NavBtnLink to="/register">Registrarse</NavBtnLink>
+                    <Nav>
+                        <NavBtnLink to="/login">
+                            Iniciar Sesión<Icons.TiUser/>
+                        </NavBtnLink>
+                        <NavBtnLink to="/register">
+                            Registrarse
+                        </NavBtnLink>
+                    </Nav>
                 </NavMenu>
                 {/* <NavBtn>
                     <NavBtnLink to="/registrarse">Registrarse
                     </NavBtnLink>
                 </NavBtn> */}
             </Nav>
+            <Outlet/>
         </>
     );
 };
