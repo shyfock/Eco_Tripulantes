@@ -32,6 +32,10 @@ const Navegation = () => {
                             <Link className='nav-link' to='/login'>Iniciar sesión
                             </Link>
                         </NavItem>
+                        <NavItem className="nav-link">
+                            <Link className='nav-link' to='/chat'>Chat
+                            </Link>
+                        </NavItem>
                     </ul>
                     </div>
 
