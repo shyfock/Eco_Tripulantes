@@ -1,23 +1,38 @@
 import React from 'react';
-import { Button, Card } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
+import Card from 'react-bootstrap/Card'
 // import ReactDOM from 'react-dom';
 import './Cards.css';
 
-function InfoCard(props) {
-  return (
-<Card style={{ width: '18rem' }}>
-  <Card.Img variant="top" src="holder.js/100px180" />
-  <Card.Body>
-    <Card.Title>{props.title}</Card.Title>
-    <Card.Text>
-      {props.description}
-    </Card.Text>
-    <Card.Footer>
-      {props.author}
-    </Card.Footer>
-    <Button variant="primary">Ver más</Button>
-  </Card.Body>
-</Card>)
+class InfoCard extends React.Component {
+  constructor (props) {
+    super(props);
+    this.state = {};
+  }
+  render() {
+
+    return (
+      <Card style={{
+        width: '18rem',
+        height: '40rem'
+       }}>
+        <Card.Img variant="top" src={this.props.image} alt="Sin imagen" />
+        <Card.Body>
+          <Card.Title>{this.props.title}</Card.Title>
+          <Card.Text style={{overflow: "scroll", height: "15rem"}}>
+            {this.props.description}
+          </Card.Text>
+          <Card.Footer>
+            {this.props.author}
+          </Card.Footer>
+          <Card.Footer style={{fontSize: "70%"}}>
+            Publicado: {this.props.date}
+          </Card.Footer>
+          <Button variant="primary" href={this.props.url} target="_blank">Ver más</Button>
+        </Card.Body>
+      </Card>
+    )
+  }
 }
 export default InfoCard;
 

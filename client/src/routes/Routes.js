@@ -8,7 +8,7 @@ import Register from "../components/Register";
 import Login from "../components/Login";
 import Navegation from "../layouts/Navegation";
 import PrivateRoute from "../components/auth/privateroute";
-import Information from "../components/information";
+import Information from "../components/information/information";
 import Navbar from "../layouts/Navbar/Navbar";
 import Profile from "../components/Profile";
 
@@ -20,9 +20,9 @@ function AppRouter() {
                     {/* <Route path="/home" index element={<Home/>}/> */}
                     <Route exact path="/register" element={<Register/>}/>
                     <Route exact path="/login" element={<Login/>}/>
-                    <Route exact path="/home" element={<PrivateRoute/>}>
-                        <Route path="" element={<Home/>} />
-                    </Route>
+                    <Route exact path="/home" element={<Home/>}/>
+                        
+                    
                     <Route exact path="/chat" element={<PrivateRoute/>}>
                         <Route path="" element={<Chat/>} />
                     </Route>

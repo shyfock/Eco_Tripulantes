@@ -8,13 +8,21 @@ import {
     NavBtnLink
 } from './NavbarElements';
 import * as Icons from "react-icons/ti";
+import Cookies from 'universal-cookie';
 import { Outlet } from 'react-router';
+import { Button } from 'react-bootstrap';
+
+const cookies = new Cookies();
 
 const Navbar = () => {
+    function logOut() {
+        cookies.remove('_s');
+        window.location.reload();
+    }
     return (
         <>
             <Nav>
-                <NavLink to='/'> 
+                <NavLink to='/home'> 
                     <h1>EcoTripulantes</h1><Icons.TiLeaf />
                 </NavLink>
                 <Bars />
@@ -41,6 +49,18 @@ const Navbar = () => {
                         <NavBtnLink to="/register">
                             Registrarse
                         </NavBtnLink>
+                        <Button
+                            style={{
+                                backgroundColor: "#F5DABD",
+                                border: "none",
+                                padding: "10px 22px",
+                                marginLeft: "24px",
+                                color: "#fff",
+                                
+                                }}
+                            onClick={() => {logOut()}}>
+                            Cerrar Sesión<Icons.TiEject/>
+                        </Button>
                     </Nav>
                 </NavMenu>
                 {/* <NavBtn>
