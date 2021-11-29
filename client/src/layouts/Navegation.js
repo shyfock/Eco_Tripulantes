@@ -1,10 +1,16 @@
 import React  from "react";
 import logo from '../assets/logo.png';
 import { Link, Outlet } from 'react-router-dom';
-import { NavItem } from 'react-bootstrap';
+import Cookies from 'universal-cookie';
+import { NavItem, Nav, NavDropdown } from 'react-bootstrap';
 
+const cookies = new Cookies();
 
 function Navegation() {
+    function logOut() {
+        cookies.remove('_s');
+        window.location.reload();
+    }
     return (
         <div>
             <nav className="navbar nav-style navbar-expand-lg navbar-dark bg-dark sticky-top">
@@ -41,12 +47,16 @@ function Navegation() {
                                 </Link>
                             </NavItem>
                             <NavItem className="nav-link">
-                                <Link className='nav-link' to='/register'> Registrarme
-                                </Link>
-                            </NavItem>
-                            <NavItem className="nav-link">
-                                <Link className='nav-link' to='/login'>Iniciar sesión
-                                </Link>
+                            <NavDropdown
+                                id="nav-dropdown-dark-example"
+                                title="Iniciar sesión"
+                                menuVariant="dark"
+                                >
+                                <NavDropdown.Item href='/login'>Iniciar sesión</NavDropdown.Item>
+                                <NavDropdown.Item href='/register'>Registrarme</NavDropdown.Item>
+                                <NavDropdown.Divider />
+                                <NavDropdown.Item onClick={() => {logOut()}}>Cerrar sesión</NavDropdown.Item>
+                            </NavDropdown>
                             </NavItem>
                         </ul>
                     </div>
