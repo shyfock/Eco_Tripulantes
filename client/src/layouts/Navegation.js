@@ -7,10 +7,10 @@ import { NavItem } from 'react-bootstrap';
 function Navegation() {
     return (
         <div>
-            <nav className="navbar nav-style navbar-expand-lg navbar-dark bg-dark">
+            <nav className="navbar nav-style navbar-expand-lg navbar-dark bg-dark sticky-top">
                 <div className="container">
-                    <Link to="/home">
-                    <img src={logo} alt="" width="60" height="54"/>Ecotripulantes
+                    <Link to="/home" >
+                    <img src={logo} alt="" width="80" height="74"/><span className="name-logo">Ecotripulantes</span>
                     </Link>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon">
@@ -19,7 +19,7 @@ function Navegation() {
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                         </ul>
-                        <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+                        <ul className="link-style navbar-nav me-auto mb-2 mb-lg-0">
                             <NavItem className="nav-link">
                                 <Link className='nav-link' to='/home'> Inicio
                                 </Link>
