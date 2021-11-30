@@ -1,109 +1,115 @@
 body {
-    position: relative;
-    min-height: 100vh;
-    padding-bottom: 10em;
+  position: relative;
+  min-height: 100vh;
+  padding-bottom: 10em;
 }
 
 .columna-login {
-    margin-left: 10%;
+  margin-left: 10%;
 }
 .columna-form {
-    margin-right: 10%;
+  margin-right: 10%;
 }
-.form-login{
-    text-align: center;
-    background-color: rgb(187 208 240 / 50%);
-    border-radius: 10px ;
-    box-shadow: 0px 1px 2px 0px;
-    margin: 0px 74px 0px 74px;
+.form-login {
+  text-align: center;
+  background-color: rgb(187 208 240 / 50%);
+  border-radius: 10px;
+  box-shadow: 0px 1px 2px 0px;
+  margin: 0px 74px 0px 74px;
 }
 .formulario {
-    display: flex;
-    flex-direction: column;
-    margin: inherit;
-    margin-left: 30px;
-    margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  margin: inherit;
+  margin-left: 30px;
+  margin-top: 20px;
 }
 .inputs {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 .labels {
-    float: left;
-    margin-bottom: 8px !important;
+  float: left;
+  margin-bottom: 8px !important;
 }
 .link {
-    text-decoration: initial;
-    margin-top: 10px;
-    margin-bottom: 10px;
+  text-decoration: initial;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
-.nav-style{
-    box-shadow:  0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    z-index: 5px;
-    background-color: #222123;
-    height: 100px;
+.nav-style {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  z-index: 5px;
+  background-color: #222123;
+  height: 100px;
 }
 .nav {
-    position: fixed;
-    top: 0%;
+  position: fixed;
+  top: 0%;
 }
-.row-logo{
-    width: 40%;
-    margin: auto;
+.row-logo {
+  width: 40%;
+  margin: auto;
 }
 
 .row1 {
-    margin: 30px 20px 30px 0px;
+  margin: 30px 20px 30px 0px;
 }
 
 .sign-box {
-    width: 300px;
-    height: 400px;
-    border: solid rgb(236, 235, 235) 1px;
-    box-shadow: 0 15px 30px 0 rgba(0, 0, 0, .11), 0 5px 15px 0 rgba(0, 0, 0, .08);
-    padding: 50px 20px;
-    border-radius: 15px;
-    margin: 0 auto;
+  width: 300px;
+  height: 400px;
+  border: solid rgb(236, 235, 235) 1px;
+  box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.11),
+    0 5px 15px 0 rgba(0, 0, 0, 0.08);
+  padding: 50px 20px;
+  border-radius: 15px;
+  margin: 0 auto;
 }
 
 .btn-primary {
-    text-align: center !important;
-    margin:  0 auto !important;
+  text-align: center !important;
+  margin: 0 auto !important;
 }
 
 .s-btn {
-    text-align: center !important;
-    margin: 0 auto;
+  text-align: center !important;
+  margin: 0 auto;
 }
-.na-link {
-    color: white !important;
+.nav-link {
+  color: #dee2e6 !important;
 }
 .name-logo {
-    color: white;
-    margin-left: 10px;
-    font-family: 'Roboto', sans-serif;
-    font-size: 24px;
-    
+  color: white;
+  margin-left: 10px;
+  font-family: "Roboto", sans-serif;
+  font-size: 24px;
 }
-a{
-    text-decoration: none !important;
+a {
+  text-decoration: none !important;
 }
 
 a:hover {
-    color: green !important;
-    text-decoration: none !important;
+  color: green !important;
+  text-decoration: none !important;
 }
 
 .name-eco {
-    margin-top: 20px;
-    font-size: 40px;
-    color: green;
-    font-family: 'Roboto', sans-serif;
+  margin-top: 20px;
+  font-size: 40px;
+  color: green;
+  font-family: "Roboto", sans-serif;
 }
-.name-eco p{
-    color: #222123;
-    font-size: 22px;
+.name-eco p {
+  color: #222123;
+  font-size: 22px;
 }
-.card-style{
-    border-top: 1px solid #d5d5d5;
-    
+.card-style {
+  border-top: 1px solid #d5d5d5;
+}
+
+#navbarSupportedContent {
+  background-color: #212529;
+  padding: 5px 10px;
+  margin: 0;
+  border-radius: 10px;
 }

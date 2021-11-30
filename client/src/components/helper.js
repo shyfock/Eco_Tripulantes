@@ -1,6 +1,7 @@
 import { isUndefined } from 'util'
 import Cookies from 'universal-cookie'
 import axios from 'axios';
+import { APP_HOST as host } from '../app.json'
 
 const cookies = new Cookies()
 
@@ -24,3 +25,30 @@ function renewSession() {
     return session;
 }
 
+export const request = {
+    get: function(services) {
+        let token = renewSession();
+        return axios.get(`${host}${services}`, {
+            headers: {
+                Authorization: `Bearer ${token}`,
+            }
+        });
+    },
+    post: function(services, data) {
+        let token = renewSession();
+        return axios.post(`${host}${services}`, data, {
+            headers: {
+                Authorization: `Bearer ${token}`,
+            },
+        });
+    },
+
+    put: function(services, data) {
+        let token = renewSession();
+        return axios.put(`${host}${services}`, data, {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        })
+    }
+}

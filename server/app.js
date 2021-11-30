@@ -9,6 +9,7 @@ var auth = require('./auth/main.auth');
 var testSERVERRouter = require('./routes/testSERVER');
 
 var publicationsRouter = require('./routes/publication.router');
+var chatsRouter = require('./routes/chat.router');
 var usersRouter = require('./routes/usuario.router');
 
 
@@ -36,7 +37,7 @@ app.use("/testSERVER", testSERVERRouter);
 app.use(auth);
 
 app.use('/publications', publicationsRouter);
-
+app.use('/chats', chatsRouter);
 
 // Mensaje a página del navegador
 // app.use((req, res) => {

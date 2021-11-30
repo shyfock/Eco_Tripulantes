@@ -9,7 +9,7 @@ import Login from "../components/Login";
 import Navegation from "../layouts/Navegation";
 import PrivateRoute from "../components/auth/privateroute";
 import Information from "../components/information/information";
-import Navbar from "../layouts/Navbar/Navbar";
+//import Navbar from "../layouts/Navbar/Navbar";
 import Profile from "../components/Profile";
 
 function AppRouter() {
