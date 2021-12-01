@@ -17,12 +17,12 @@ function AppRouter() {
         <Router>
             <Routes>
                 <Route exact path="/" element={<Navegation/>}>
-                    {/* <Route path="/home" index element={<Home/>}/> */}
+                    {/*Rutas públicas*/}
+                    <Route exact path="/" element={<Home/>}/>
                     <Route exact path="/register" element={<Register/>}/>
                     <Route exact path="/login" element={<Login/>}/>
                     <Route exact path="/home" element={<Home/>}/>
-                        
-                    
+                    {/* Rutas privadas - acceso con autenticación*/}
                     <Route exact path="/chat" element={<PrivateRoute/>}>
                         <Route path="" element={<Chat/>} />
                     </Route>
@@ -32,16 +32,6 @@ function AppRouter() {
                     <Route exact path="/profile" element={<PrivateRoute/>}>
                         <Route path="" element={<Profile/>} />
                     </Route>
-                    
-                    {/* <Route
-                        path='/home'
-                        element={
-                        <PrivateRoute>
-                            <Home/>
-                        </PrivateRoute>
-                        }
-                    /> */}
-                    {/* <Route exact path="/chat" element={<Chat/>}/> */}
                     <Route exact path="/publications" element={<PrivateRoute/>}>
                         <Route path="" element={<Publications/>}>
                             <Route

@@ -33,7 +33,11 @@ export default class Login extends  React.Component {
             if(isNull(res.data.token)) {
                 alert('Usuario y/o contraseña inválida');
             } else {
-                cookies.set('_s',res.data.token, {
+                cookies.set('_s', res.data.token, {
+                    path: '/',
+                    expires: calculateSessionExpiration(),
+                });
+                cookies.set('_username', this.state.username, {
                     path: '/',
                     expires: calculateSessionExpiration(),
                 });

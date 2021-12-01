@@ -6,41 +6,48 @@ import user from '../../assets/user.jpg';
 
 export default class ChatContent extends Component {
   messagesEndRef = createRef(null);
-  chatItms = [
-    {
-      key: 1,
-      image:
-        "../../assets/user.jpg",
-      type: "",
-      msg: "HOla, como estas",
-    },
-    {
-      key: 2,
-      image:
-      "../../assets/user.jpg",
-      type: "other",
-      msg: "bien ",
-    },
-    {
-      key: 3,
-      image:
-        "../../assets/user.jpg",
-      type: "other",
-      msg: "y tu?",
-    },
-    {
-      key: 4,
-      image: {user},
-      type: "",
-      msg: "bien gracias",
-    },
+  chatItms = this.props.chats
+  chat = {
+    date: "",
+    msg: "",
+    receiver: "",
+    sender: "",
+  }
+  // [
+  //   {
+  //     date: 1,
+  //     msg:
+  //       "../../assets/user.jpg",
+  //     type: "",
+  //     msg: "HOla, como estas",
+  //   },
+  //   {
+  //     key: 2,
+  //     image:
+  //     "../../assets/user.jpg",
+  //     type: "other",
+  //     msg: "bien ",
+  //   },
+  //   {
+  //     key: 3,
+  //     image:
+  //       "../../assets/user.jpg",
+  //     type: "other",
+  //     msg: "y tu?",
+  //   },
+  //   {
+  //     key: 4,
+  //     image: {user},
+  //     type: "",
+  //     msg: "bien gracias",
+  //   },
     
-  ];
+  // ];
 
   constructor(props) {
     super(props);
     this.state = {
-      chat: this.chatItms,
+      chats: this.chatItms,
       msg: "",
     };
   }
@@ -51,15 +58,15 @@ export default class ChatContent extends Component {
 
   componentDidMount() {
     window.addEventListener("keydown", (e) => {
-      if (e.keyCode == 13) {
-        if (this.state.msg != "") {
+      if (e.key === 'Enter') {
+        if (this.state.msg !== "") {
           this.chatItms.push({
             key: 1,
             type: "",
             msg: this.state.msg,
             image: {user}
           });
-          this.setState({ chat: [...this.chatItms] });
+          this.setState({ chats: [...this.chatItms] });
           this.scrollToBottom();
           this.setState({ msg: "" });
         }
@@ -81,7 +88,7 @@ export default class ChatContent extends Component {
                 isOnline="active"
                 image= {user}
               />
-              <p>Andres</p>
+              <p>{this.props.username}</p>
             </div>
           </div>
 
@@ -95,14 +102,14 @@ export default class ChatContent extends Component {
         </div>
         <div className="content__body">
           <div className="chat__items">
-            {this.state.chat.map((itm, index) => {
+            {this.state.chats.map((itm, index) => {
               return (
                 <ChatItem
                   animationDelay={index + 2}
-                  key={itm.key}
-                  user={itm.type ? itm.type : "me"}
+                  //key={itm.key}
+                  user={itm.receiver !== this.props.username ? "other" : " "}
                   msg={itm.msg}
-                  image={itm.image}
+                  //image={itm.image}
                 />
               );
             })}

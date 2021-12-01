@@ -10,6 +10,7 @@ const cookies = new Cookies();
 function Navegation() {
     function logOut() {
         cookies.remove('_s');
+        cookies.remove('_username');
         window.location.reload();
     }
     const [show, setShow]=React.useState(false);
@@ -17,7 +18,7 @@ function Navegation() {
         <div>
             <nav className="navbar nav-style navbar-expand-lg navbar-dark bg-dark sticky-top">
                 <div className="container">
-                    <Link className="navbar-brand" to="/home" >
+                    <Link className="navbar-brand" to="/" >
                     <img src={logo} alt="" width="80" height="74"/><span className="name-logo">Ecotripulantes</span>
                     </Link>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" onClick={()=>setShow(!show)}>

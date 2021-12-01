@@ -4,10 +4,11 @@ import ChatBody from "./chatBody/ChatBody";
 
 
 const Chat = () => {
+    
     return (
         <>
         <div className="__main" >
-            <ChatBody/>
+            <ChatBody url="/chats"/>
         </div>
         </>
     );
