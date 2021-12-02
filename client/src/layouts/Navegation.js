@@ -2,12 +2,12 @@ import React  from "react";
 import logo from '../assets/logo.png';
 import { Link, Outlet } from 'react-router-dom';
 import Cookies from 'universal-cookie';
-import { NavItem, Nav, NavDropdown } from 'react-bootstrap';
+import { NavItem,  NavDropdown } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const cookies = new Cookies();
 
-function Navegation() {
+function Navegation(props) {
     function logOut() {
         cookies.remove('_s');
         cookies.remove('_username');
@@ -34,11 +34,11 @@ function Navegation() {
                                 </Link>
                             </NavItem>
                             <NavItem className="nav-link">
-                                <Link className='nav-link' to='/profile'> Perfil
+                                <Link className='nav-link' to='/team'> Equipo Teams
                                 </Link>
                             </NavItem>
                             <NavItem className="nav-link">
-                                <Link className='nav-link' to='/information'> Información
+                                <Link className='nav-link' to='/information'> Noticias
                                 </Link>
                             </NavItem>
                             <NavItem className="nav-link">

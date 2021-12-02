@@ -1,38 +1,23 @@
 import React from 'react';
-
+import { Container, Col, Row } from 'react-bootstrap';
 import './Footer.css';
 
 function Footer () {
 
 return (
-<section className="footer">
-    <hr className="footer-seperator" />
-    
-    <section className="footer-info">
-    <section className="footer-info-left">
-        <section className="footer-info__name">
-            Ecotripulantes@2021
-        </section>
-            
-    </section>
-    <section className="footer-info-center">
-        <section className="footer-info__email">
-        Ecotripulantes@gmail.com
-        </section>
-        <section className="footer-info__terms">
-        Terminos y condiciones
-
-        </section>
-    </section>
-    <section className="footer-info-right">
-        <section className="footer-info__contact">
-        Contáctanos
+    <div className="footer ">
+        <Container>
         
-        </section>
-    </section>
-    </section>
-    <hr className="footer-seperator" />
-</section>
+        <Row className="style-copy">
+            <Col>
+            <p className="copyright">Ⓒ 2021 Todos los derechos reservados | Ecotripulantes</p>
+            </Col>
+        </Row>
+        </Container>
+    </div>
+  
+    
+    
 )
 
 }
