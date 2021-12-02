@@ -30,6 +30,9 @@ exports.find = function(req, res) {
     Chat.find(function(err, chats) {
         res.json(chats)
     })
+    .populate({path: 'sender', model: 'user'})
+    .populate({path: 'receiver', model: 'user'})
+    .exec();
 }
 
 exports.findOne = function(req, res) {

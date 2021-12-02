@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
-const Schema = new mongoose.Schema;
+const Schema = mongoose.Schema;
+
 
 const ProfileSchema = new Schema ({
     name:{type: String, required: true, max: 100},
@@ -10,6 +11,8 @@ const ProfileSchema = new Schema ({
     dept:{type: String, required: true, max: 100},
     profession:{type: String, required: true, max: 100},
     info:{type: String, required: true, max: 500},
+    users:[{type: Schema.Types.ObjectId, ref: 'user'}],
+    avatar:[{type: Schema.Types.ObjectId, ref: 'upload'}]
 })
 
 module.exports = mongoose.model("profile", ProfileSchema);

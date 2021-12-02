@@ -1,5 +1,6 @@
 const Profile = require("../models/profile.model")
 
+
 let response = {
     msg: "",
     exito: false,
@@ -34,6 +35,9 @@ exports.find = function(req, res) {
     Profile.find(function(err, profiles) {
         res.json(profiles)
     })
+    .populate({ path: 'users', model: 'user'})
+    .populate({ path: 'avatar', model: 'upload'})
+    .exec();
 }
 
 exports.findOne = function(req, res) {

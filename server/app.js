@@ -1,4 +1,5 @@
 var createError = require('http-errors');
+const methodOverride = require("method-override")
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
@@ -7,9 +8,10 @@ var cors = require('cors');
 var database = require('./config/database');
 var auth = require('./auth/main.auth');
 var testSERVERRouter = require('./routes/testSERVER');
-
 var publicationsRouter = require('./routes/publication.router');
 var chatsRouter = require('./routes/chat.router');
+var profileRouter = require('./routes/profile.router');
+var imageRouter = require("./routes/image.router")
 var usersRouter = require('./routes/usuario.router');
 
 
@@ -23,7 +25,8 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(methodOverride('_method'));
+//app.use(express.static(path.join(__dirname, 'public')));
 
 // Mongo connection
 database.mongoConnect();
@@ -36,6 +39,8 @@ app.use("/testSERVER", testSERVERRouter);
 
 app.use(auth);
 
+app.use('/profile', profileRouter);
+app.use('/image', imageRouter);
 app.use('/publications', publicationsRouter);
 app.use('/chats', chatsRouter);
 
@@ -57,7 +62,7 @@ app.use(function(err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500);
-  res.json('error');
+  res.json(err);
 });
 
 module.exports = app;
