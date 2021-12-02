@@ -10,6 +10,7 @@ import Cookies from 'universal-cookie'
 import axios from 'axios'
 
 
+
 const cookies = new Cookies();
 
 
@@ -21,11 +22,18 @@ export default class Login extends  React.Component {
         this.state ={
             username: '',
             password: '',
+            userId: '',
         }
     }
 
-    setLogin() {
-        axios.post(`${host}/users/login`, {
+    async getUser() {
+        await axios.get(`${host}/users/${this.state.username}`)
+            .then((response) => {
+                this.setState({userId: response.data._id})
+            })
+    }
+    async setLogin() {
+        await axios.post(`${host}/users/login`, {
             username: this.state.username,
             password: this.state.password
         })
@@ -37,18 +45,24 @@ export default class Login extends  React.Component {
                     path: '/',
                     expires: calculateSessionExpiration(),
                 });
+                cookies.set('_userId', this.state.userId, {
+                    path: '/',
+                    expires: calculateSessionExpiration(),
+                });
                 cookies.set('_username', this.state.username, {
                     path: '/',
                     expires: calculateSessionExpiration(),
                 });
             window.location.replace('/home')
             }
+            
             console.log(res)
             
         })
         .catch((err) => {
             console.log(err)
         })
+        console.log(this.state.userId)
     }
 
     render () {
@@ -102,6 +116,7 @@ export default class Login extends  React.Component {
                                 width: '100%'
                             }}
                             onClick={() => {
+                                this.getUser()
                                 this.setLogin()
                             }}
                         >

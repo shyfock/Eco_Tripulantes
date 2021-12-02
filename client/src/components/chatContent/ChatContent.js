@@ -10,8 +10,8 @@ export default class ChatContent extends Component {
   chat = {
     date: "",
     msg: "",
-    receiver: "",
-    sender: "",
+    receiver: [],
+    sender: [],
   }
   // [
   //   {
@@ -47,7 +47,7 @@ export default class ChatContent extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      chats: this.chatItms,
+      chats: [],
       msg: "",
     };
   }
@@ -107,7 +107,7 @@ export default class ChatContent extends Component {
                 <ChatItem
                   animationDelay={index + 2}
                   //key={itm.key}
-                  user={itm.receiver !== this.props.username ? "other" : " "}
+                  user={itm.receiver[0].username !== this.props.username ? "other" : " "}
                   msg={itm.msg}
                   //image={itm.image}
                 />

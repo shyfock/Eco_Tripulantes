@@ -11,6 +11,7 @@ function Navegation(props) {
     function logOut() {
         cookies.remove('_s');
         cookies.remove('_username');
+        cookies.remove('_userId');
         window.location.reload();
     }
     const [show, setShow]=React.useState(false);

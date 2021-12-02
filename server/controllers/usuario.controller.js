@@ -46,3 +46,15 @@ exports.register = function(req, res) {
         res.json(response);
     })
 }
+
+exports.find = function(req, res) {
+    User.find(function(err, users) {
+        res.json(users)
+    })
+}
+
+exports.findOne = function(req, res) {
+    User.findOne({username: req.params.username}, function(err, user) {
+        res.json(user)
+    })
+}

@@ -1,5 +1,7 @@
 import { Row, Card, Col } from 'react-bootstrap';
 import  logo  from '../assets/user.jpg';
+import logoA from '../assets/user_Andres.jpg'
+import logoL from '../assets/user_Lore.jpg'
 
 function Profile() {
     return (
@@ -22,7 +24,7 @@ function Profile() {
                 <Row xs={1} md={2} lg={3} className="team-img1">
                 
                     <Card className="team-img">
-                        <Card.Img variant="top" className="img" src={logo} />
+                        <Card.Img variant="top" className="img" src={logoA} />
                         <Card.Body >
                         <Card.Title>Andrés Vanegas</Card.Title>
                         <Card.Text>
@@ -48,7 +50,7 @@ function Profile() {
                         </Card.Footer>
                     </Card>
                     <Card className="team-img">
-                        <Card.Img variant="top" className="img" src={logo} />
+                        <Card.Img variant="top" className="img" src={logoL} />
                         <Card.Body>
                         <Card.Title>Lorena Garcia</Card.Title>
                         <Card.Text>

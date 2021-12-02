@@ -36,7 +36,14 @@ exports.find = function(req, res) {
 }
 
 exports.findOne = function(req, res) {
-    Chat.findOne({_id: req.params.id}, function(err, chat) {
+    Chat.findOne({
+        _id: req.params.id/* [0],
+        _id: req.params.receiver[0] */
+    }, function(err, chat) {
+        if(err) {
+            console.error(err);
+            return;
+        }
         res.json(chat)
     })
 }

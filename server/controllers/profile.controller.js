@@ -16,6 +16,8 @@ exports.create = function(req, res) {
         dept: req.body.dept,
         profession: req.body.profession,
         info: req.body.info,
+        users: req.body.users,
+        avatar: req.body.avatar,
     })
     profile.save(function(err) {
         if(err) {

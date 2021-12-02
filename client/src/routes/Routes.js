@@ -16,7 +16,6 @@ function AppRouter() {
     return (
         <Router>
             <Routes>
-<<<<<<< Updated upstream
                 <Route exact path="/" element={<Navegation/>}>
                     {/*Rutas públicas*/}
                     <Route exact path="/" element={<Home/>}/>
@@ -24,15 +23,6 @@ function AppRouter() {
                     <Route exact path="/login" element={<Login/>}/>
                     <Route exact path="/home" element={<Home/>}/>
                     {/* Rutas privadas - acceso con autenticación*/}
-=======
-                <Route exact path="/" element={<Navegation /> }>
-                    {/* <Route path="/home" index element={<Home/>}/> */}
-                    <Route exact path="/register" element={<Register/>}/>
-                    <Route exact path="/login" element={<Login/>}/>
-                    <Route exact path="/home" element={<Home/>}/>
-                    <Route exact path="/" element={<Home/>}/>
-                        
->>>>>>> Stashed changes
                     <Route exact path="/chat" element={<PrivateRoute/>}>
                         <Route path="" element={<Chat/>} />
                     </Route>

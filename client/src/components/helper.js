@@ -15,10 +15,6 @@ export function getSession() {
     return isUndefined(cookies.get('_s')) ? false : cookies.get('_s');
 }
 
-export function getUser() {
-    return cookies.get('_username');
-}
-
 function renewSession() {
     const session = getSession();
     if (!session) window.location.href = '/login';
